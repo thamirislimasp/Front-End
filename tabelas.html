@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Trabalhando com tabelas</title>
+    </head>
+    <body>
+        <h1>Trabalhando com Tabelas</h1>
+        <p>No HTML os dados tabulares são aqueles que podem ser representados visualmente em forma de tabela.</p>
+        <p>A Elaboração de uma tabela consiste em uma combinação de linhas e colunas, resultando em uma forma objetiva e ordenada de expor as informações.</p>
+        
+        <h3>Tabela Simples:</h3>
+        <!--O atributo "border" no HTML5 não está mais sendo utilizado, pois essa configuração é realizada centro do CSS.-->
+        <table border="1">
+            <!-- tr = é definido como linha-->
+            <tr>
+                <!-- td = é definido como célula-->
+                <td>Violão</td>
+                <td>Guitarra</td>
+           </tr>               
+           <tr>
+                <td>Violino</td>
+                <td>Piano</td>
+           </tr>
+        </table>
+
+        <h3>Tabela com células de título:</h3>
+        <table border="1">
+            <tr>
+                <th>Instrumentos de corda</th>
+                <th>Intrumentos de sopro</th>
+            </tr>
+            <tr>
+                <td>Violino</td>
+                <td>Flauta</td>
+            </tr>
+            <tr>
+                <td>Violão</td>
+                <td>Corneta</td>
+            </tr>
+        </table>
+
+        <h3>Cabeçalhos na vertical:</h3>
+        <table border="1">
+            <tr>
+                <th>Livros</th>
+                <td>Arte moderna</td>
+                <td>Programação</td>
+            </tr>
+            <tr>
+                <th>Quantidade</th>
+                <td>500 exemplares</td>
+                <td>600 exemplares</td>
+            </tr>
+        </table>
+
+        <h3>Cabeçalho, corpo e rodapé da tabela:</h3>
+        <table border="1">
+            <caption>Tabela thead/ tfoot/ tbody</caption>
+            <thead>
+                <tr>
+                    <th colspan="2">Coluna 1</th>
+                    <th>Coluna 2</th>
+                    <th>Coluna 3</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>Resultado 1</td>
+                    <td>Resultado 2</td>
+                    <td>Resultado 3</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Conteúdo A</td>
+                    <td>Conteúdo B</td>
+                    <td>Conteúdo C</td>
+                </tr>
+                <tr>
+                    <td>Conteúdo D</td>
+                    <td>Conteúdo E</td>
+                    <!--<td>Conteúdo F</td>-->
+                </tr>
+                <tr>
+                    <td>Conteúdo G</td>
+                    <td>Conteúdo H</td>
+                    <td>Conteúdo I</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Estes elementos criam seções dentro da tabela que podem receber uma formação diferenciada, útil para a formatação de tabelas com muitos dados.</p>
+    </body>
+</html>
