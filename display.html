@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block-inline</title>
+   
+</head>
+<style>
+    #EleBlock{
+        background-color: rgb(217, 232, 8);
+    }
+
+    #EleLinha{
+        background-color: chartreuse;
+    }
+
+    span.a{
+        display: inline;
+        /* padrão */
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 1px solid red;
+        background-color: darkkhaki;
+    }
+
+    span.b{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 1px solid rgb(32, 8, 139);
+        background-color: rgb(107, 177, 189);
+    }
+
+    span.c{
+        display: block;
+        width: 100px;
+        /* height: 100px; */
+        padding: 5px;
+        border: 1px solid rgb(8, 139, 8);
+        background-color: rgb(189, 107, 182);
+    }
+</style>
+
+<body>
+    <h1>Valor do bloco em linha</h1>
+    <p>Cada elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento é que é. Os dois valores de exibição mais comuns são <b>bloco</b> e em <b>linha</b>.</p>
+    <hr>
+    <h2>Elementos de nível de bloco</h2>
+    <p>Um elemento de nível de bloco sempre começa em uma nova linha e os navegadores automaticamente adicionar algum espaço (uma margem) antes e depois do elemento.</p>
+    <p>Um elemento de nível de bloco ocupa sempre a largura total disponível (estoque para a esquerda e para a direita, tanto quanto pode).</p>
+    <h2>Elemntos linha</h2>
+    <p>Um elemento inline não começa em uma nova linha. Um elemento em linha ocupa apenas a largura necessária.</p>
+    <h2>Exemplos:</h2>
+    <p id="EleBlock">Elemento bloco</p>
+    <p>Exemplos de <span id="EleLinha">Linha</span></p>
+
+    
+    <p>Comparado com <b>display: inline</b>, o principal A diferença é que <b>display: inline-block</b> permite para
+        definir uma largura e altura no elemento.</p>
+
+        <p>Além disso, com <b>display: inline-block</b>, as margens superior e inferior/respectivamente são respeitados,
+        Mas com o <b>display: inline</b> não.</p>
+
+        <p>Comparado com <b>display: block</b>, a principal diferença é que <b>display: inline-block</b> não adiciona uma
+        quebra de linha após o elemento, para que o elemento possa estar ao lado de outros Elementos.</p>
+    <hr>
+    <h3>Exemplos:</h3>
+    <h3>display: inline</h3>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet
+        consequat. Aliquam erat volutpat. <span class="a">inline</span> <span class="a">inline</span> gravida nisl
+        sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+    <h2>display: inline-block</h2>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet
+        consequat. Aliquam erat volutpat. <span class="b">inline-block</span> <span class="b">inline-block</span> gravida nisl
+        sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+    <h2>display: block</h2>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet
+        consequat. Aliquam erat volutpat. <span class="c">block</span> <span class="c">block</span> gravida nisl
+        sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+</body>
+
+</html>

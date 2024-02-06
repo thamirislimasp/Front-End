@@ -1,0 +1,43 @@
+body{
+    background-color: aquamarine;
+}
+
+
+h1{
+    background-color: yellow; 
+    width: 100%; 
+}
+
+p{
+    padding: 5px;
+}
+
+#caixa_branca{
+    position: relative;
+    background-color: white;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.caixas{
+    position: absolute;
+    height: 270px;
+    width: 200px;
+    border: 1px solid red;
+    font-family: sans-serif;
+    text-align: center;  
+}
+
+#box_um{    
+    background-color: blueviolet;     
+}
+
+#box_dois{
+    background-color: chocolate;
+    right: 0px;
+}
+
+#box_tres{
+    background-color: greenyellow;
+    bottom: 0px;
+}
