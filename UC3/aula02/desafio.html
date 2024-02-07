@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    <script>
+        var nota1 = parseInt (prompt("Digite a primeira nota:"));
+        var nota2 = parseInt (prompt("Digite a segunda nota:"));
+        var nota3 = parseInt (prompt("Digite a terceira nota:"));
+        var nota4 = parseInt (prompt("Digite a quarta nota:"));
+
+        var media = (nota1 + nota2 + nota3 + nota4) / 4;
+            alert ("A média é: " + media);
+
+        if (media >= 6) { 
+            alert ("Aprovado")
+        } else if (media == 5) { 
+            alert ("Recuperação") 
+        } else { 
+            alert ("Reprovado")
+        }
+    </script>
+    
+</body>
+</html>

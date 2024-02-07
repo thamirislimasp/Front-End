@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02</title>
+</head>
+<body>
+    <!-- INICIO DO JS -->
+    <script>
+        //SE - SENAO (CONDICIONAIS)
+        //OPERADORES LÓGICOS
+        /* 
+            VERIFICAÇÃO DE MÉDIA ESCOLAR
+            
+            MEDIA = (N1 + N2 + N3 + N4) / 4
+
+            PARA QUE O ALUNO SEJA APROVADO A MÉDIA TEM QUE SER MAIOR OU IGUAL A 6, SENÃO O ALUNO ESTÁ REPROVADO.
+
+            SE MEDIA >= 6 ENTAO
+                ESCREVAL (APROVADO)
+            SENAO
+                ESCREVAL (REPROVADO)    
+        */
+
+        var media = (5 + 6 + 7 + 8) / 4;
+
+        if (media >= 6) { //SE MEDIA >= 6 ENTAO
+            alert ("Aprovado")
+        } else { //SENAO
+            alert ("Reprovado")
+        }
+
+        /*
+            SE MEDIA >= 6 ENTAO
+                APROVADO
+            SENAO SE MEDIA == 5 ENTAO
+                RECUPERAÇÃO
+            SENAO 
+                REPROVADO
+        */
+
+        if (media >= 6) { //SE
+            alert ("Aprovado")
+        } else if (media == 5) { //SENAO SE
+            alert ("Recuperação") 
+        } else { //SENAO
+            alert ("Reprovado")
+        }
+
+        /*  
+            OPERADORES DE COMPARAÇÃO:
+            == IGUALDADE
+            >= MAIOR OU IGUAL
+            <= MENOR OU IGUAL
+            > MAIOR QUE
+            < MENOR QUE
+            != DIFERANÇA
+            <> DIFERENÇA
+            === IGUALDADE ESTRITA
+        */
+        
+        var num = parseInt (prompt ("Digite um número:"));
+        var num2 = parseInt (prompt ("Digite outro número:"));
+
+        alert (num + num2);
+
+
+    </script>
+    <!-- FIM DO JS -->
+</body>
+</html>

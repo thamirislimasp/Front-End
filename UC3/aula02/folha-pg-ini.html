@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de Pagamento Inicial</title>
+</head>
+<body>
+    <script>
+        /*
+            DESCONTOS:
+            VT - 6% - 0.06
+            VR - SE O SALÁRIO FOR ATÉ 2500 = 180 REAIS
+            VR - SE O SALÁRIO FOR ACIMA DE 2501 = 250 REAIS
+
+            NOME, SALÁRIO E DEPARTAMENTO
+        */ 
+        var nome = prompt("Digite seu nome completo:");
+        var salario = parseFloat(prompt("Seu salário:"));
+        var departamento = prompt("Seu departamento:");
+
+        var descVT = salario * 0.06
+        alert("Seu salário sofre desconto de " + descVT + " de VT");
+        
+        var descVR = 0
+    
+        if (salario <= 2500) {
+            descVR = 180
+            alert("Seu salário sofre desconto de " + descVR + " de VR")
+        } else {
+            descVR = 250
+            alert("Seu salário sofre desconto de " + descVR + " de VR")
+        }
+
+        alert("Total de descontos: " + (descVT + descVR));
+
+        alert("Seu salário com descontos fica: " + (salario - descVT - descVR));
+        
+    </script> 
+</body>
+</html>
