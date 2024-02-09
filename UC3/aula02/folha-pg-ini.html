@@ -32,9 +32,14 @@
             alert("Seu salário sofre desconto de " + descVR + " de VR")
         }
 
-        alert("Total de descontos: " + (descVT + descVR));
+        var salarioLiquido = salario - descVT - descVR;
+        var totalDesc = descVT + descVR;
 
-        alert("Seu salário com descontos fica: " + (salario - descVT - descVR));
+        alert("Total de descontos: " + totalDesc);
+
+        alert("Seu salário com descontos fica: R$ " + salarioLiquido);
+
+        alert("Nome: " + nome + " | Salário Bruto: R$ " + salario + " | Departamento: " + departamento + " | Total de descontos: R$ " + totalDesc + " | Salário Líquido: R$ " + salarioLiquido);
         
     </script> 
 </body>
