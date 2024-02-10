@@ -1,20 +1,54 @@
-img{
-    width: 200px;
-    height: 100px;
+body{
+    background-color: rgb(218, 216, 216);
+    margin: 0 auto;
+    max-width: 900px;
+    font-family: sans-serif;
 }
 
-.flex-container{
+img{
+    width: 280px;
+    height: 200px;  
+}
+
+.flex-container1{
     display: flex;
-    align-content: space-between;
+    flex-direction: row;
+    height: 50px;
+    margin-left: 40px;
+} 
+
+a{
+    text-decoration: none;
+    background-color:rgb(111, 107, 114);
+    color: white;
+    padding: 12px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    margin: 2px;
+    font-size: small;
+}
+
+a:hover{
+    background-color: White;
+    color: rgb(43, 43, 41);  
+}
+
+
+.flex-container2{
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-.flex-container>div{
+.caixas{
     background-color: white;
-    width: 100px;
-    height: 50px;
+    width: 280px;
+    height: 400px;
     color: black;
     font-family: sans-serif;
-    /* padding: 20px; */
-    border: 1px solid black;
+    margin: 4px;
+    font-size: small;
+    padding: 6px;
+    border-radius: 3px;
 }
+
