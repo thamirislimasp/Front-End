@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@media</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+ 
+        .tudo {
+            overflow: auto;
+        }
+ 
+        #texto {
+            margin-left: 4px;
+ 
+        }
+ 
+        #list {
+            float: none;
+            width: auto;
+        }
+ 
+        #menulist {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .menuitem {
+            background-color: white;
+            border: solid 1px white;
+            border-radius: 4px;
+            list-style-type: none;
+            margin: 4px;
+            padding: 2px;
+            text-align: center;
+        }
+ 
+        .topnav {
+            overflow: hidden;
+            background-color: rgb(48, 37, 37);
+ 
+        }
+ 
+        .topnav {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+ 
+ 
+        }
+ 
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+ 
+ 
+        @media screen and (min-width:480px) {
+            body {
+                background-color: rgb(255, 0, 106);
+            }
+ 
+            #list {
+                width: 200px;
+                float: left;
+            }
+ 
+            #texto {
+                margin-left: 220px;
+            }
+        }
+ 
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+ 
+            /* Quando uso o min-width, a unidade de medida colocada a
+         partir de :...
+         Quando usa o max-width, a unidad de medida colocada
+         */
+ 
+ 
+ 
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1>@media</h1>
+    <p>
+        Regra, introduzida em CSS2, possibilitou definir regras de estilo diferentes para diferentes tipos de mídia.</p>
+ 
+    <p>As consultas de mídia podem ser usadas para verificar muitas coisas, como:</p>
+    <ul>
+        <li> Largura e altura da viewport</li>
+        <li>Orientação da viewport (paisagem ou retrato)</li>
+        <li>Resolução</li>
+    </ul>
+    <p>Usando consultas de mídia são uma técnica popular para oferecer um estilo personalizado Folha para desktops,
+        laptops, tablets e smartphones.
+    </p>
+    <p>Exemplos: </p>
+ 
+    <div class="tudo">
+        <div id="list">
+            <ul id="menulist">
+                <li class="menuitem">Conteúdo 1</li>
+                <li class="menuitem">Conteúdo 2</li>
+                <li class="menuitem">Conteúdo 3</li>
+                <li class="menuitem">Conteúdo 4</li>
+                <li class="menuitem">Conteúdo 5</li>
+            </ul>
+        </div>
+ 
+        <div id="texto">
+            <h1>Conteúdo de quebra</h1>
+            <p>Quando determinamos as medidas em pixel das orientações de páginas, estamos falando dos chamados
+                "breakpoints"</p>
+        </div>
+    </div>
+ 
+    <p>MENU</p>
+    <div class="topnav">
+        <a href="#">HOME</a>
+        <a href="#">MENU</a>
+        <a href="#">CONTATO</a>
+    </div>
+ 
+</body>
+ 
+</html>
