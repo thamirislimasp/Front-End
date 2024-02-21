@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 - Arrays</title>
+</head>
+<body>
+    <input type="text" id="nome" name="nome">
+    <button id="btn-inserir">Inserir</button>
+    <script>
+
+     /* Arrays - push() - Inserir uma nova informação dentro do nosso array (vetor);
+        
+        Arrays - pop() - Remover uma informação do nosso array(vetor) no último item;
+
+        Arrays - shift() - Remover uma informação do nosso array(vetor) no primeiro item;
+
+        Arrays - unshift() - Inserir um item no inicio do nosso array(item);
+     */
+
+    var nomes = ["Fulano", "Fulana"];
+    
+    console.log(nome);
+
+    nomes.push("Bruno");
+
+    console.log(nomes);
+
+    nomes.pop();
+    nomes.shift();
+
+    console.log(nomes);
+
+    var botao = document.getElementById("btn-inserir");
+    
+    botao.addEventListener("click",function(){
+        var nome = document.getElementById("nome");
+        
+        nomes.push(nome.value);
+        
+        nome.value = "";
+        
+        console.log(nomes);
+    })
+    </script>
+</body>
+</html>

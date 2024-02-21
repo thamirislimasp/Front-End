@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Cadastro de Nomes</h4>
+    <input type="text" id="nome" name="nome">
+    <button id="btn-inserir">Inserir</button>
+    <button id="btn-excluir">Excluir</button>
+ 
+    <h4>Lista de Nomes</h4>
+    <ol id="lista-nomes"></ol>
+ 
+    <script>
+        var nomes = [];
+        var nome = document.getElementById("nome");
+        var botaoInserir = document.getElementById("btn-inserir");
+        var botaoExcluir = document.getElementById("btn-excluir");
+        var listaNomes = document.getElementById("lista-nomes");
+ 
+        botaoInserir.addEventListener("click", function(){
+            nomes.push(nome.value);
+            nome.value = ""; //Limpar o input de nome            
+            mostrarLista();
+        });
+ 
+        botaoExcluir.addEventListener("click", function(){
+            nomes.pop();
+            mostrarLista() 
+        });
+ 
+        function mostrarLista() {
+            //Bloco de ações que serão executadas
+            var aux = "";
+            //console.log(nomes);
+            nomes.forEach(item => {
+                aux += `<li>${item}</li>`
+                //aux += "<li>" + item + </li>
+            });
+ 
+            listaNomes.innerHTML = aux;
+        }
+    </script>
+</body>
+</html>

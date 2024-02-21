@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 04</title>
+    <title>Boletim Atualizado</title>
 </head>
- 
 <body>
         <h4>Cadastro de notas</h4>
     
@@ -21,6 +19,7 @@
             <option value="Português">Português</option>
             <option value="Matemática">Matematica</option>
         </select>
+
     <br>
         <label for="bim1">Bimestre 1:</label>
         <input type="text" name="bim1" id="bim1">
@@ -38,7 +37,9 @@
         <input type="text" name="media" id="media" readonly>
     
         <button id="calcular">Calcular</button>
-    
+        
+        <h4>Lista</h4>
+
         <p id="mostrar-nome"></p>
         <p id="mostrar-serie"></p>
         <p id="mostrar-materia"></p>
@@ -48,8 +49,11 @@
         <p id="mostrar-bim4"></p>
         <p id="mostrar-media"></p>
         <p id="mostrar-situacao"></p>
+
+        
     
         <script>
+            var listaAlunos = [];      
             var nome = document.getElementById("nome")
             var serie = document.getElementById("serie")
             var materia = document.getElementById("materia")
@@ -60,7 +64,7 @@
             var media = document.getElementById("media")
             var calcular = document.getElementById("calcular")
     
-        calcular. addEventListener("click", function(){
+            calcular. addEventListener("click", function(){
     
             media.value= (parseInt(bim1.value) +
                         parseInt(bim2.value) +
@@ -68,7 +72,7 @@
                         parseInt(bim4.value)) / 4
             document.getElementById("mostrar-nome").innerText = "Nome Completo: " + nome.value  
             document.getElementById("mostrar-serie").innerText = "Série: " + serie.value
-            document.getElementById("mostrar-materia").innerText = "Matéria" + materia.value
+            document.getElementById("mostrar-materia").innerText = "Matéria: " + materia.value
             document.getElementById("mostrar-bim1").innerText = "Bim1: " + bim1.value
             document.getElementById("mostrar-bim2").innerText = "Bim2: " + bim2.value
             document.getElementById("mostrar-bim3").innerText = "Bim3: " + bim3.value
@@ -81,9 +85,44 @@
                 document.getElementById("mostrar-situacao").innerText = "reprovado"
     
             }
-                    
+
+            listaAlunos.push(nome.value);
+            listaAlunos.push(serie.value);
+            listaAlunos.push(materia.value);
+            listaAlunos.push(bim1.value);
+            listaAlunos.push(bim2.value);
+            listaAlunos.push(bim3.value);
+            listaAlunos.push(bim4.value);
+            listaAlunos.push(media.value);
+            listaAlunos.push(calcular.value);
+
+            nome.value = "";
+            serie.value = "";
+            materia.value = "";
+            bim1.value = "";
+            bim2.value = "";
+            bim3.value = "";
+            bim4.value = "";
+            media.value = "";
+            calcular.value = "";
+
+            mostrarLista();                    
         })
+        
+        
+        var listaBoletim = document.getElementById("lista-nomes");
+ 
+            function mostrarLista() {
+                var aux = "";
+                listaAlunos.forEach(item => {
+                    aux += `<li>${item}</li>`
+                });
+
+                listaBoletim.innerHTML = aux;
+            }
+
        
+
         </script>
     </body>
 </html>
