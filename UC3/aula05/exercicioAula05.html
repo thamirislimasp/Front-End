@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boletim Atualizado</title>
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table, table tr, table tr td, table tr th{
+            border: 1px solid #ccc;
+            padding: 3px;
+        }
+    </style>
+
+
 </head>
 <body>
         <h4>Cadastro de notas</h4>
     
         <label for="nome">Nome completo:</label>
         <input type="text" name="nome" id="nome">
-    
-        <label for="serie">Série:</label>
-        <input type="text" name="serie" id="serie">
-    
+
         <label for="materia">Matéria:</label>
         <select name="materia" id="materia">
             <option value="Português">Português</option>
             <option value="Matemática">Matematica</option>
         </select>
 
-    <br>
         <label for="bim1">Bimestre 1:</label>
         <input type="text" name="bim1" id="bim1">
     
@@ -30,96 +38,95 @@
         <label for="bim3">Bimestre 3:</label>
         <input type="text" name="bim3" id="bim3">
     
-        <label for="bim4">Bimestre 1:</label>
+        <label for="bim4">Bimestre 4:</label>
         <input type="text" name="bim4" id="bim4">
     
-        <label for="media">Média</label>
-        <input type="text" name="media" id="media" readonly>
-    
-        <button id="calcular">Calcular</button>
+        <button id="btn-inserir">Inserir</button>
         
-        <h4>Lista</h4>
+        <h4>Boletim de Notas</h4>
 
-        <p id="mostrar-nome"></p>
-        <p id="mostrar-serie"></p>
-        <p id="mostrar-materia"></p>
-        <p id="mostrar-bim1"></p>
-        <p id="mostrar-bim2"></p>
-        <p id="mostrar-bim3"></p>
-        <p id="mostrar-bim4"></p>
-        <p id="mostrar-media"></p>
-        <p id="mostrar-situacao"></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Matéria</th>
+                    <th>Bimestre 1</th>
+                    <th>Bimestre 2</th>
+                    <th>Bimestre 3</th>
+                    <th>Bimestre 4</th>
+                    <th>Média</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody id="boletim"></tbody>
+        </table>
 
         
     
         <script>
-            var listaAlunos = [];      
+                 
             var nome = document.getElementById("nome")
-            var serie = document.getElementById("serie")
             var materia = document.getElementById("materia")
             var bim1 = document.getElementById("bim1")
             var bim2 = document.getElementById("bim2")
             var bim3 = document.getElementById("bim3")
             var bim4 = document.getElementById("bim4")
-            var media = document.getElementById("media")
-            var calcular = document.getElementById("calcular")
-    
-            calcular. addEventListener("click", function(){
-    
-            media.value= (parseInt(bim1.value) +
-                        parseInt(bim2.value) +
-                        parseInt(bim3.value) +
-                        parseInt(bim4.value)) / 4
-            document.getElementById("mostrar-nome").innerText = "Nome Completo: " + nome.value  
-            document.getElementById("mostrar-serie").innerText = "Série: " + serie.value
-            document.getElementById("mostrar-materia").innerText = "Matéria: " + materia.value
-            document.getElementById("mostrar-bim1").innerText = "Bim1: " + bim1.value
-            document.getElementById("mostrar-bim2").innerText = "Bim2: " + bim2.value
-            document.getElementById("mostrar-bim3").innerText = "Bim3: " + bim3.value
-            document.getElementById("mostrar-bim4").innerText = "Bim4: " + bim4.value
-            document.getElementById("mostrar-media").innerText = "Média: " + media.value  
-        
-            if(media.value >=6)  {
-                document.getElementById("mostrar-situacao").innerText = "aprovado"
-            } else{
-                document.getElementById("mostrar-situacao").innerText = "reprovado"
-    
-            }
+            var botao = document.getElementById("btn-inserir")
+            var boletim = document.getElementById("boletim")
 
-            listaAlunos.push(nome.value);
-            listaAlunos.push(serie.value);
-            listaAlunos.push(materia.value);
-            listaAlunos.push(bim1.value);
-            listaAlunos.push(bim2.value);
-            listaAlunos.push(bim3.value);
-            listaAlunos.push(bim4.value);
-            listaAlunos.push(media.value);
-            listaAlunos.push(calcular.value);
-
+            var nomes = [];
+            var materias = [];
+            var aBim1 = [];
+            var aBim2 = [];
+            var aBim3 = [];
+            var aBim4 = [];
+    
+            botao. addEventListener("click", function(){
+            
+            nomes.push(nome.value);
+            materias.push(materia.value);
+            aBim1.push(parseInt(bim1.value));
+            aBim2.push(parseInt(bim2.value));
+            aBim3.push(parseInt(bim3.value));
+            aBim4.push(parseInt(bim4.value));    
+      
             nome.value = "";
-            serie.value = "";
             materia.value = "";
             bim1.value = "";
             bim2.value = "";
             bim3.value = "";
             bim4.value = "";
-            media.value = "";
-            calcular.value = "";
-
-            mostrarLista();                    
+            
+            mostrarBoletim();                    
         })
-        
-        
-        var listaBoletim = document.getElementById("lista-nomes");
- 
-            function mostrarLista() {
+                
+            function mostrarBoletim() {
                 var aux = "";
-                listaAlunos.forEach(item => {
-                    aux += `<li>${item}</li>`
-                });
 
-                listaBoletim.innerHTML = aux;
+                for (var cont=0; cont < nomes.length; cont++) {
+                    var media = (aBim1 [cont] + aBim2 [cont] + aBim3 [cont] + aBim4 [cont]) / 4;
+
+                    aux += '<tr>'
+                            + '<td>' + nomes [cont] + '</td>'
+                            + '<td>' + materias [cont] + '</td>'
+                            + '<td>' + aBim1 [cont] + '</td>'
+                            + '<td>' + aBim2 [cont] + '</td>'
+                            + '<td>' + aBim3 [cont] + '</td>'
+                            + '<td>' + aBim4 [cont] + '</td>'
+                            + '<td>' + media + '</td>';
+                            if(media >= 7){
+                                aux += '<td>' + "Aprovado" + '</td>'
+                            } else {
+                            aux += '<td>' + "Reprovado" + '</td>'
+                            }
+                        aux += '</tr>'    
+                } 
+
+
+                boletim.innerHTML = aux;
             }
+
+
 
        
 

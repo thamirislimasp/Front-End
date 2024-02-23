@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06</title>
+</head>
+<body>
+    <h4>Folha de Pagamento</h4>
+
+    <label for="nome">Nome Completo:</label>
+    <input type="text" name="nome" id="nome">
+
+    <label for="cargo">Cargo:</label>
+    <input type="text" name="cargo" id="cargo">
+
+    <label for="salario">Salário Bruto:</label>
+    <input type="text" name="salario" id="salario">
+
+    <button id="btn-gerar-folha">Gerar Folha de Pagamento</button>
+
+    <div id="relatorio"></div>
+    
+    <script>
+        var botaoGerar = document.getElementById("btn-gerar-folha");
+        var relatorio = document.getElementById("relatorio");
+
+        botaoGerar.addEventListener("click", function(){
+            // Variáveis dos inputs
+            var nome = document.getElementById("nome");
+            var cargo = document.getElementById("cargo");
+            var salario = document.getElementById("salario");
+
+            // Variáveis para os calculos
+            var descVT = 0; //6% -> 0.06
+            var descVR = 0; //Tabela INSS
+            var descINSS = 0; //120 -> Salário até 2500 / 200
+            var salarioLiquido = 0; //Salário com os descontos
+
+            //Desconto do VT
+            descVT = parseFloat(salario.value) *0.06;
+
+            //Desconto do VR
+            if(parseFloat(salario.value) <= 2500){
+                descVR = 120;
+            } else {
+                descVR = 200;
+            }
+
+            //Desconto do INSS
+            /*
+            Salário de até R$1412,00 | R$105,90
+            Primeira faixa: (R$ 1412,00 x 7,5%)
+            De R$ 1412,01 até R$ 2.666,68 | R$112,92
+            Segunda faixa: (R$ 2.666,68 - R$1412,00) = R$ 1.254,68 X 9%
+            De R$ 2.666,69 até R$ 4.000,03 | R$ 160,00
+            Terceira faixa:(R$ 4.000,03 - R$ 2.666,69) = R$ 1.333,34 X 12% 
+            De R$ 4.000,04 até R$ 7.786,02 | R$ 530,04
+            Quarta faixa: (R$ 7.786,02 - R$ 4.000,04) = R$ 3.785,98 X 14%  R$ 908,86
+            */
+
+            if(parseFloat(salario.value) <= 1412){
+                descINSS = 105.90
+            }   else if(parseFloat(salario.value) > 1412 && parseFloat(salario.value) <= 2666.68){
+                descINSS = 105.90 + 112.92
+            }   else if(parseFloat(salario.value) > 2666.68 && parseFloat(salario.value) <= 4000.03){
+                descINSS = 105.90 + 112.92 + 160
+            }   else {
+                descINSS = 105.90 + 112.92 + 160 + 530.04
+            }
+            
+            salarioLiquido = parseFloat(salario.value) - (descVT + descVR + descINSS);
+            
+            relatorio.innerHTML = "<p>Nome Completo: " + nome.value + "</p>"
+                                    + "<p>Cargo: " + cargo.value + "</p>"
+                                    + "<p>Salário Bruto: " + salario.value + "</p>"
+                                    + "<p>Salário Líquido: " + salarioLiquido + "</p>"
+        
+        });
+
+
+
+
+    </script>
+</body>
+</html>
