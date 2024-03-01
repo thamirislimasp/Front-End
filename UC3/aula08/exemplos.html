@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 - Exemplos</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tito's Market</h1>
+    <p>
+        Carrinho 
+        <span id="itens"></span> 
+        <span id="total"></span>
+    </p>
+    <form id="formulario-cadastro">
+        <label>Produto</label>
+        <input type="text" name="produto">
+        <label>Preço</label>
+        <input type="text" name="preco">
+        <label>QTD</label>
+        <input type="text" name="qtd">
+        <button>Adicionar ao carrinho</button>
+    </form>
+
+    <!-- Previnir o evento de submit -->
+    <script>
+        let formulario = document
+                    .getElementById("formulario-cadastro");
+        let produtos = []
+        let precos = []
+        let qtds = []
+
+        formulario.addEventListener("submit", function(){
+            //Previnir um evento padrão
+            event.preventDefault();
+
+            validar(formulario.produto)
+            validar(formulario.preco)
+            validar(formulario.qtd)
+
+            produtos.push(formulario.produto.value)
+            precos.push(parseFloat(formulario.preco.value))
+            qtds.push(parseInt(formulario.qtd.value))
+
+            //Armazenado e mostrando o dado na span itens
+            let spanItens = document
+                    .getElementById("itens");
+
+            spanItens.innerHTML = produtos.length;
+            
+            let totalCompra = 0;
+
+            //Calcular o total da compra
+            for (let cont = 0; cont < precos.length; cont++) {  
+                totalCompra = totalCompra + (precos[cont] * qtds[cont]);
+
+
+                //Mostrar o total da compra
+                let spanTotal = document
+                        .getElementById("total");
+
+                spanTotal.innerHTML = totalCompra;
+                
+            }
+
+            
+        })
+
+        function validar(campo) {
+            if(campo.value == "") {
+                campo.style = "border: 1px red solid;"
+            } else {
+                campo.style = "border: 1px green solid;"
+            }
+        }
+    </script>
+</body>
+</html>

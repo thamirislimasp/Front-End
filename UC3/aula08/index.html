@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08</title>
+</head>
+<body>
+    <input type="number" name="matricula" onkeyup="buscarMatricula(this)" onblur="validar(this)">
+    
+    <!-- Eventos de JS -->
+
+    <script>
+
+        function buscarMatricula(matricula){
+            if(matricula.value.length >=3){
+                console.log(matricula.value)
+                matricula.style = "border: 1px green solid;"
+            }
+        }
+
+        function validar(matricula){
+            if(matricula.value.length < 3){
+                matricula.style = "border: 1px red solid;"
+            }
+        }
+        
+    </script>
+</body>
+</html>

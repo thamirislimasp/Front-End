@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 - Exemplos</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario-cadastro">
+        <label>Produto</label>
+        <input type="text" name="produto"> <!--required-->
+        <label>Preço</label>
+        <input type="text" name="preco">
+        <label>QTD</label>
+        <input type="text" name="qtd">
+        <!-- <label>Situação</label>
+        <select name="situacao">
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo">Inativo</option>
+        </select> -->
+        <button>Adicionar ao carrinho</button>
+    </form>
+
+    <!-- Previnir o evento de submit -->
+    <script>
+        let formulario = document.getElementById("formulario-cadastro");
+
+        formulario.addEventListener("submit", function(){
+            //Prevenir um evento padrão
+            event.preventDefault();
+
+            validar(formulario.produto);
+            validar(formulario.preco);
+            validar(formulario.qtd);
+            // validar(formulario.situacao);
+
+            console.log(formulario.produto.value);
+            console.log(formulario.preco.value);
+            console.log(formulario.qtd.value);
+            // console.log(formulario.situacao.value);
+        });
+
+        function validar(campo){
+            if(campo.value == ""){
+                campo.style = "border: 1px red solid;"
+            } else{
+                campo.style = "border: 1px green solid;"
+            }
+        };
+
+    </script>
+</body>
+</html>
