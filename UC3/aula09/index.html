@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09</title>
+    <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    label{
+        display: block;
+        padding: 8px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <h1>Planner</h1>
+    <h2>Organize sua agenda:</h2>
+    <hr>
+    <br>
+
+    
+    <label for="data">Data:</label>
+    <input type="date" name="data" id="data">
+
+    <label for="horario">Horário:</label>
+    <input type="time" name="horario" id="horario">
+
+    <label for="compromisso">Compromisso:</label>
+    <input type="text" name="compromisso" id="compromisso">
+
+    <button id="btn">Insira na agenda</button>
+    
+
+    <br>
+
+    <h3>Agenda:</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Compromisso</th>
+            </tr>
+        </thead>
+        <tbody id="agenda"></tbody>
+    </table>
+    
+
+    <script>
+
+        var data = document.getElementById("data");
+        var horario = document.getElementById("horario");
+        var compromisso = document.getElementById("compromisso");
+        var botao = document.getElementById("btn");
+
+        var datas = [];
+        var horarios = [];
+        var compromissos = [];
+
+        botao.addEventListener("click", function(){
+            
+            datas.push(data.value);
+            horarios.push(horario.value);
+            compromissos.push(compromisso.value);  
+            
+            data.value = "";
+            horario.value = "";
+            compromisso.value = "";
+            
+            mostrarAgenda();                    
+        })
+
+        function mostrarAgenda() {
+            var aux = "";
+
+            for (var cont = 0; cont < datas.length; cont++) {
+                aux += '<tr>'
+                            + '<td>' + datas[cont] + '</td>'
+                            + '<td>' + horarios[cont] + '</td>'
+                            + '<td>' + compromissos[cont] + '</td>';
+                                                
+                aux += '</tr>';
+            }
+            
+            agenda.innerHTML = aux;
+        }
+    </script>
+</body>
+</html>
