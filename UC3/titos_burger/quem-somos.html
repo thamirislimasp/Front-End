@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tito's Burger</title>
+
+    <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href="#">
+                <img src="assets/img/logo.png" alt="Logo Tito's Burger" class="logo">
+            </a>
+
+            <ul>
+                <li><a href="index.html">Páginal Inical</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+            </ul>
+        </header>
+
+        <div class="content">
+            <div class="textBox">
+                <h2>Quem<br><span>Somos</span></h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo ea, dicta, sed quas illum pariatur veniam quaerat praesentium ullam ab reiciendis ducimus numquam autem vel recusandae minus corrupti velit assumenda?</p>
+                <a href="#">Agendar reserva</a>
+            </div>
+            <div class="imgBox">
+                <img src="assets/img/lanche1.png" alt="Lanche Tito's Delicious" id="img-destaque" class="lanche-img">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="assets/img/lanche1.png" alt="Lanche Tito's Delicious" onclick="imgSlider('assets/img/lanche1.png')"></li>
+            <li><img src="assets/img/lanche2.png" alt="Lanche Tito's Delicious Bacon" onclick="imgSlider('assets/img/lanche2.png')"></li>
+            <li><img src="assets/img/lanche3.png" alt="Lanche Tito's Delicious Chicken" onclick="imgSlider('assets/img/lanche3.png')"></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(image){
+            document.getElementById('img-destaque').src = image;
+        }
+    </script>
+</body>
+</html>
