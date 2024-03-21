@@ -10,43 +10,64 @@
         var emails = [];
         var informacoesL = [];
 
+        //Puxar os slides
+        // var um = document.getElementById("um");
+        // var dois = document.getElementById("dois");
+        // var tres = document.getElementById("tres");
 
-        botao.addEventListener("click", function(){
+        let slideIndex = 0;
+        showSlides();
+      
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("card");
+          let dots = document.getElementsByClassName("dot");
+          
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+
+
+        botao.addEventListener("click", function (){
             nomes.push(nome.value)
             emails.push(email.value)
             informacoesL.push(informacoes.value)
 
             nome.value = ""
             email.value = ""
+            informacoes.value = ""
 
+            
             mostrarInformacoes();
         });
 
+        var aux_card_1 = "";
+
         function mostrarInformacoes (){
-            var aux = "";
-
+            
             for (var cont = 0; cont < nomes.length; cont++) {
-                aux +=  '<p> Name: ' + nomes[cont] + '</p>'
-                      + '<p> E-mail: ' + emails[cont] + '</p>'
-                      + '<br>'
-                      + '<p>Topics:</p>'
-                      + '<ul>'
-                            + '<li>' + '</li>'
-                            + '<li>' + '</li>'
-                            + '<li>' + '</li>'
-                aux += '</ul>';
-            }            
-        }
+                aux_card_1 +=  '<p> Name: ' + nomes[cont] + '</p>'
+                                + '<p> E-mail: ' + emails[cont] + '</p>'
+                                + '<br>'
+                                + '<p>Topics:</p>'
+                //                 + '<ul>'
+                //                 + '<li>' + '</li>'
+                //                 + '<li>' + '</li>'
+                //                 + '<li>' + '</li>'
+                // aux_card_1 += '</ul>';
+            }             
+            informacoes.innerHTML = aux_card_1;
 
-        informacoes.html(aux);
+            
+        };   
+        
+        
 
-
-        // Para segundo card
-        var opcao = document.getElementsByClassName("opcao");
-        var i;
-
-        for (i = 0; i < opcao.length; i++) {
-            opcao[i].addEventListener("click", function() {
-            this.classList.toggle("active");            
-            });
-        }
