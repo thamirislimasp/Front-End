@@ -50,6 +50,15 @@ header {
     font-weight: 200;
     width: 50%;
     margin: 20px;
+    z-index: 2;
+}
+
+#topics{
+    display: none;
+}
+
+#resultado{
+    display: none;
 }
 
 .input, .opcao{
@@ -64,6 +73,7 @@ header {
     text-align: left;
     font-family: 'Sora', sans-serif;
 }
+
 
 #btn_continue, #btn_continue_2, #btn_confirm{
     align-items: center;
@@ -91,8 +101,7 @@ header {
 .active, .opcao:hover {
     background-color: #652CD1; 
     color: #010326;
-  }
-
+}
 
 
 .get-started {
