@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;500&display=swap');
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add some styles for body*/
+body {
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #020617;
+    color: #cbd5e1;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.5;
+    /*background-image: radial-gradient(#0f172a 1px,transparent 0),radial-gradient(#0f172a 1px,transparent 0);*/
+    background-position: 0 0,25px 25px;
+    background-attachment: fixed;
+    background-size: 50px 50px;
+    overflow-x: hidden;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.get-started {
+    padding: 1rem 2rem;
+    border: 0.5px solid #1e293b;
+    background-color: #94a3b817;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 200;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    column-gap: 1.5rem;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+}
+
+.title::after {
+    content: "";
+    background: url('../images/blur-bg.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -130px;
+    right: -75px;
+    width: 500px;
+    height: 250px;
+    opacity: 0.5;
+}
+
+.logo {
+    display: none;
+}
+
+.link-card {
+    padding: 1rem;
+    border: 0.5px solid transparent;
+    transition: all ease-in-out 50ms;
+    cursor: pointer;
+}
+
+.link-card:hover {
+    border: 0.5px solid #1e293b;
+    background-color: #94a3b817;
+    border-radius: 8px;
+}
+
+.link-title {
+    font-size: 1.125rem;
+}
+
+.link-description {
+    font-size: 0.875rem;
+    font-weight: 200;
+    margin-top: 0.5rem;
+    color: #94a3b8;
+}
+
+/* CSS adicional para o estilo */
+.card{
+    background-color: #212936;
+    border: 1px solid #4D5562;
+    border-radius: 5px;
+    padding: 50px;
+    width: 500px;
+    margin-top: 100px;
+}
+
+.card h3{
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.card label{
+    display: block;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.card .form-input{
+    border-radius: 10px;
+    background-color: #212936;
+    color: #394150;
+    border: 2px solid #4D5562;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.card button{
+    border-radius: 50px;
+    background: linear-gradient(#845EEE, #652CD1);
+    padding: 15px;
+    width: 120px;
+    border: none;
+    color: #E5E7EB;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#v-topics li{
+    margin-left: 40px;
+}
+
+#v-topics{
+    margin-bottom: 20px;
+}
+
+#step2, #step3{
+    display: none;
+}
+
+#step3 p{
+    color: #4D5562;
+    font-weight: 700;
+}
+
+#step3 p:nth-of-type(3){
+    margin-top: 20px;
+}
+
+#step3 p span{
+    color: #E5E7EB;
+    font-weight: 500;
+}
+
+#topics{
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"]:not(:checked), 
+input[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999%;
+}
+
+input[type="checkbox"] + label {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4D5562;
+    border: 1px solid #394150;
+    color: #E5E7EB;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    display: block;
+}
+
+input[type="checkbox"]:checked + label {
+    border: 1px solid #212936;
+    color: #E5E7EB;
+    background: #652CD1;
+}
+
+@media screen and (min-width: 720px) {
+    .logo {
+        display: initial;
+    }
+
+    .get-started {
+        width: auto;
+    }
+
+    main {
+        flex-direction: row;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Aula 13 - Projeto</title>
+</head>
+<body>
+
+    <main>
+        <div class="card">
+            <div id="step1">
+                <h3>Register</h3>
+
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-input" placeholder="enter your name">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-input" placeholder="example@gmail.com">
+
+                <div class="flex-center">
+                    <button onclick="mudarStep(1)">Continue</button>
+                </div>
+            </div>
+
+            <div id="step2">
+                <h3>Wich topics you are interested in?</h3>
+
+                <div id="topics">
+                    <input type="checkbox" id="topico_1" name="topico_1" value="Software Development">
+                    <label for="topico_1">Software Development</label>
+
+                    <input type="checkbox" id="topico_2" name="topico_2" value="User Experience">
+                    <label for="topico_2">User Experience</label>
+
+                    <input type="checkbox" id="topico_3" name="topico_3" value="Graphic Design">
+                    <label for="topico_3">Graphic Design</label>
+                </div>
+
+                <div class="flex-center">
+                    <button onclick="mudarStep(2)">Continue</button>
+                </div>
+            </div>
+
+            <div id="step3">
+                <h3>Summary</h3>
+
+                <p>Name: <span id="v-name"></span></p>
+                <p>Email: <span id="v-email"></span></p>
+
+                <p>Topics:</p>
+                <ul id="v-topics"></ul>
+
+                <div class="flex-center">
+                    <button>Confirm</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
